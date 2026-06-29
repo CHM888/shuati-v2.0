@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f172a">
+<title>军事理论应知应会 · 刷题</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!-- App Container -->
+<div id="app">
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>🎓 军事理论应知应会</h1>
+      <p>本科2026 · 共 <span id="totalCount">427</span> 题（判断<span id="judgeCount">168</span> + 单选<span id="singleCount">144</span> + 多选<span id="multiCount">115</span>）</p>
+    </header>
+
+    <!-- Desktop Tabs -->
+    <div class="tabs" id="modeTabs">
+      <button class="tab active" data-page="practice">📖 练习模式</button>
+      <button class="tab" data-page="exam">📝 模拟考试</button>
+      <button class="tab" data-page="wrong">❌ 错题本</button>
+      <button class="tab" data-page="favorites">⭐ 收藏</button>
+      <button class="tab" data-page="search">🔍 搜索</button>
+      <button class="tab" data-page="review">📊 统计</button>
+      <button class="tab" data-page="settings">⚙️ 设置</button>
+    </div>
+
+    <!-- Filter Area -->
+    <div id="filterArea" class="filter-row">
+      <span class="filter-chip on" data-type="all">全部</span>
+      <span class="filter-chip" data-type="judge">判断题</span>
+      <span class="filter-chip" data-type="single">单选题</span>
+      <span class="filter-chip" data-type="multi">多选题</span>
+      <span style="flex:1"></span>
+      <span class="filter-chip" data-type="favorites" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);color:var(--warn)" onclick="App.practiceFavs()">⭐ 收藏题</span>
+    </div>
+
+    <!-- Stats Bar -->
+    <div id="statsBar" class="stats">
+      <div class="stat"><div class="num" id="statTotal">0</div><div class="label">已答</div></div>
+      <div class="stat"><div class="num" id="statCorrect" style="color:var(--correct)">0</div><div class="label">正确</div></div>
+      <div class="stat"><div class="num" id="statWrong" style="color:var(--wrong)">0</div><div class="label">错误</div></div>
+      <div class="stat"><div class="num" id="statRate">0%</div><div class="label">正确率</div></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+
+    <!-- Main Content -->
+    <div id="mainContent"></div>
+  </div>
+</div>
+
+<!-- Bottom Navigation (Mobile) -->
+<nav class="bottom-nav">
+  <button class="nav-item active" data-page="practice">
+    <span class="nav-icon">📖</span>练习
+  </button>
+  <button class="nav-item" data-page="exam">
+    <span class="nav-icon">📝</span>考试
+  </button>
+  <button class="nav-item" data-page="wrong">
+    <span class="nav-icon">❌</span>错题
+  </button>
+  <button class="nav-item" data-page="search">
+    <span class="nav-icon">🔍</span>搜索
+  </button>
+  <button class="nav-item" data-page="review">
+    <span class="nav-icon">📊</span>统计
+  </button>
+</nav>
+
+<!-- Scripts -->
+<script src="questions.js"></script>
+<script src="storage.js"></script>
+<script src="app.js"></script>
+
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>
