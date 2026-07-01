@@ -527,8 +527,8 @@
       if (q.type === 'judge') {
         const sel = state.selected[qIdx];
         html += '<div class="judge-btns">';
-        html += '<div class="judge-btn' + (sel === '√' ? ' selected' : '') + '" id="ej' + i + 'Y" onclick="App.examSelect(' + i + ',\'√\')">✔ 正确 (√)</div>';
-        html += '<div class="judge-btn' + (sel === '×' ? ' selected' : '') + '" id="ej' + i + 'N" onclick="App.examSelect(' + i + ',\'×\')">✘ 错误 (×)</div>';
+        html += '<div class="judge-btn' + (sel === '√' ? ' selected' : '') + '" id="ej' + i + 'Y" onclick="App.examSelect(' + qIdx + ',\'√\',' + i + ')">✔ 正确 (√)</div>';
+        html += '<div class="judge-btn' + (sel === '×' ? ' selected' : '') + '" id="ej' + i + 'N" onclick="App.examSelect(' + qIdx + ',\'×\',' + i + ')">✘ 错误 (×)</div>';
         html += '</div>';
       } else {
         html += '<div class="options">';
@@ -536,7 +536,7 @@
           const opt = q.options[j];
           const sel = state.selected[qIdx];
           let isSelected = q.type === 'multi' ? (Array.isArray(sel) && sel.indexOf(opt.label) >= 0) : (sel === opt.label);
-          html += '<div class="opt' + (isSelected ? ' selected' : '') + '" id="eo' + i + opt.label + '" onclick="App.examSelectOpt(' + i + ',\'' + opt.label + '\',' + (q.type === 'multi') + ')">';
+          html += '<div class="opt' + (isSelected ? ' selected' : '') + '" id="eo' + i + opt.label + '" onclick="App.examSelectOpt(' + qIdx + ',\'' + opt.label + '\',' + (q.type === 'multi') + ',' + i + ')">';
           html += '<span class="opt-label">' + opt.label + '</span><span>' + esc(opt.text) + '</span></div>';
         }
         html += '</div>';
@@ -551,16 +551,16 @@
     c.innerHTML = html;
   }
 
-  function examSelect(qIdx, val) {
+  function examSelect(qIdx, val, domIdx) {
     state.selected[qIdx] = val;
-    const btnY = document.getElementById('ej' + qIdx + 'Y');
-    const btnN = document.getElementById('ej' + qIdx + 'N');
+    const btnY = document.getElementById('ej' + domIdx + 'Y');
+    const btnN = document.getElementById('ej' + domIdx + 'N');
     if (btnY) btnY.className = 'judge-btn' + (val === '√' ? ' selected' : '');
     if (btnN) btnN.className = 'judge-btn' + (val === '×' ? ' selected' : '');
     updateExamAnswered();
   }
 
-  function examSelectOpt(qIdx, label, isMulti) {
+  function examSelectOpt(qIdx, label, isMulti, domIdx) {
     if (!state.selected[qIdx]) state.selected[qIdx] = isMulti ? [] : '';
     if (isMulti) {
       const arr = state.selected[qIdx];
@@ -568,14 +568,14 @@
       if (idx >= 0) arr.splice(idx, 1); else arr.push(label);
       const q = ALL_QUESTIONS[qIdx];
       for (let i = 0; i < q.options.length; i++) {
-        const el = document.getElementById('eo' + qIdx + q.options[i].label);
+        const el = document.getElementById('eo' + domIdx + q.options[i].label);
         if (el) el.className = 'opt' + (arr.indexOf(q.options[i].label) >= 0 ? ' selected' : '');
       }
     } else {
       state.selected[qIdx] = label;
       const q = ALL_QUESTIONS[qIdx];
       for (let i = 0; i < q.options.length; i++) {
-        const el = document.getElementById('eo' + qIdx + q.options[i].label);
+        const el = document.getElementById('eo' + domIdx + q.options[i].label);
         if (el) el.className = 'opt' + (q.options[i].label === label ? ' selected' : '');
       }
     }
@@ -584,15 +584,12 @@
 
   function updateExamAnswered() {
     const answered = Object.keys(state.selected).filter(k => state.queue.indexOf(parseInt(k)) >= 0).length;
-    const timerEl = document.querySelector('.exam-timer strong');
+    const timerEl = document.querySelector('.exam-timer');
     if (timerEl) {
       const m = Math.floor(state.examTimeLeft / 60);
       const s = state.examTimeLeft % 60;
-      timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
-    }
-    const statEl = document.querySelector('.exam-timer');
-    if (statEl) {
-      statEl.innerHTML = statEl.innerHTML.replace(/已答: \d+/, '已答: ' + answered);
+      timerEl.innerHTML = '⏰ 剩余时间: <strong>' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s + '</strong> ｜ 已答: ' + answered + '/' + state.queue.length;
+      if (state.examTimeLeft < 300) timerEl.className = 'exam-timer warning';
     }
   }
 
