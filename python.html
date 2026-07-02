@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python期末复习题 · 含答案</title>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--correct:#22c55e;--text:#e2e8f0;--muted:#94a3b8;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:16px;max-width:800px;margin:0 auto;padding-bottom:80px}
+h1{text-align:center;font-size:1.3rem;margin:16px 0 4px;background:linear-gradient(135deg,var(--accent),#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{text-align:center;color:var(--muted);font-size:.78rem;margin-bottom:20px}
+h2{font-size:1rem;margin:24px 0 10px;padding:6px 12px;background:var(--card);border-radius:6px;border-left:3px solid var(--accent)}
+.q-card{background:var(--card);border-radius:10px;padding:14px;margin:10px 0;border:1px solid var(--border)}
+.q-t{font-size:.9rem;margin-bottom:8px}
+.ops{margin-left:8px}
+.op{font-size:.86rem;color:var(--muted);padding:2px 0}
+.op.a{color:var(--correct);font-weight:700}
+.code{background:#0d1117;color:#c9d1d9;padding:8px 12px;border-radius:6px;font-family:"Courier New",monospace;font-size:.8rem;margin:6px 0;white-space:pre;overflow-x:auto;border:1px solid var(--border)}
+.qa{margin:10px 0;padding:10px 14px;background:var(--card);border-radius:8px;border:1px solid var(--border)}
+.qa .qt{font-size:.88rem;margin-bottom:6px}
+.qa .aa{font-size:.85rem;color:var(--correct);padding:8px 12px;background:rgba(34,197,94,.06);border-radius:6px;border-left:3px solid var(--correct)}
+.fa{color:var(--correct);font-weight:700}
+.toc{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.toc a{color:var(--accent);text-decoration:none;font-size:.78rem;padding:3px 10px;border:1px solid var(--border);border-radius:14px}
+.toc a:hover{background:var(--accent);color:#fff}
+</style>
+</head>
+<body>
+
+<h1>🐍 Python期末复习题 · 含答案</h1>
+<p class="sub">50 单选题 + 6 简答题 + 6 程序填空题</p>
+
+<div class="toc"><a href="#s">单选题</a><a href="#a">简答题</a><a href="#f">程序填空</a></div>
+
+<h2 id="s">一、单选题</h2>
+
+<div class="q-card"><div class="q-t"><b>1.</b> 下列哪个不是Python合法的变量名？</div><div class="ops">
+<div class="op">A. my_var</div><div class="op">B. _count</div><div class="op a">C. 2nd_place  ✅答案</div><div class="op">D. 姓名</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>2.</b> 执行 print(type(3.14)) 的输出结果是？</div><div class="ops">
+<div class="op">A. &lt;class 'int'&gt;</div><div class="op a">B. &lt;class 'float'&gt;  ✅答案</div><div class="op">C. &lt;class 'str'&gt;</div><div class="op">D. &lt;class 'complex'&gt;</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>3.</b> 字符串 s = "abcdef"，执行 s[1:5] 的结果是？</div><div class="ops">
+<div class="op">A. 'abcd'</div><div class="op a">B. 'bcde'  ✅答案</div><div class="op">C. 'bcdef'</div><div class="op">D. 'abcde'</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>4.</b> 以下哪个语句能从用户输入中读取一个整数？</div><div class="ops">
+<div class="op">A. num = input()</div><div class="op a">B. num = int(input())  ✅答案</div><div class="op">C. num = str(input())</div><div class="op">D. num = float(input())</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>5.</b> 下列代码的输出结果是？<br>print("hello".upper())</div><div class="ops">
+<div class="op">A. 'Hello'</div><div class="op a">B. 'HELLO'  ✅答案</div><div class="op">C. 'hello'</div><div class="op">D. 报错</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>6.</b> 下列代码的输出结果是？<br>print("Python"[2:4])</div><div class="ops">
+<div class="op a">A. 'th'  ✅答案</div><div class="op">B. 'yt'</div><div class="op">C. 'tho'</div><div class="op">D. 'py'</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>7.</b> 若 x = 8，表达式 x % 2 == 0 or x % 3 == 0 的值为？</div><div class="ops">
+<div class="op a">A. True  ✅答案</div><div class="op">B. False</div><div class="op">C. 0</div><div class="op">D. 1</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>8.</b> 若 a = 15，表达式 a > 10 and a < 20 的值为？</div><div class="ops">
+<div class="op a">A. True  ✅答案</div><div class="op">B. False</div><div class="op">C. 10</div><div class="op">D. 20</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>9.</b> 在Python中，for i in range(1, 5): print(i) 输出的最后一个数字是？</div><div class="ops">
+<div class="op">A. 1</div><div class="op a">B. 4  ✅答案</div><div class="op">C. 5</div><div class="op">D. 6</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>10.</b> 以下哪种数据类型不支持索引操作？</div><div class="ops">
+<div class="op">A. 列表</div><div class="op">B. 字符串</div><div class="op a">C. 集合  ✅答案</div><div class="op">D. 元组</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>11.</b> 调用函数时，以下哪种参数传递方式允许不按顺序传递参数？</div><div class="ops">
+<div class="op">A. 位置参数</div><div class="op a">B. 关键字参数  ✅答案</div><div class="op">C. 默认参数</div><div class="op">D. 可变参数</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>12.</b> 获取字典 d = {'x':10, 'y':20} 中所有键的方法是？</div><div class="ops">
+<div class="op">A. d.values()</div><div class="op">B. d.items()</div><div class="op a">C. d.keys()  ✅答案</div><div class="op">D. d.get()</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>13.</b> 定义函数时使用的关键字是？</div><div class="ops">
+<div class="op a">A. def  ✅答案</div><div class="op">B. func</div><div class="op">C. define</div><div class="op">D. function</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>14.</b> 列表 lst = [3, 1, 2]，执行 lst.sort() 后，lst 的值是？</div><div class="ops">
+<div class="op">A. [3, 2, 1]</div><div class="op a">B. [1, 2, 3]  ✅答案</div><div class="op">C. None</div><div class="op">D. [3, 1, 2]</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>15.</b> 对于字典 d = {'a':1, 'b':2}，获取键 'a' 对应值的正确方式是？</div><div class="ops">
+<div class="op">A. d['a']</div><div class="op">B. d('a')</div><div class="op">C. d.get('a')</div><div class="op a">D. 以上A和C都可以  ✅答案</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>16.</b> 匿名函数 lambda a, b: a if a > b else b 的功能是？</div><div class="ops">
+<div class="op">A. 返回a和b的和</div><div class="op a">B. 返回a和b中较大的  ✅答案</div><div class="op">C. 返回a和b中较小的</div><div class="op">D. 判断a是否等于b</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>17.</b> 以下关于列表的操作，哪一项会报错？</div><div class="ops">
+<div class="op">A. lst=[1,2,3]; lst.append(4)</div><div class="op a">B. lst=(1,2,3); lst[0]=10  ✅答案</div><div class="op">C. lst=[1,2,3]; lst.insert(0,0)</div><div class="op">D. lst=[1,2,3]; lst.pop()</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>18.</b> 类中的 self 参数代表什么？</div><div class="ops">
+<div class="op">A. 类本身</div><div class="op a">B. 当前对象的引用  ✅答案</div><div class="op">C. 父类的引用</div><div class="op">D. 模块的名称</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>19.</b> 函数 lambda x, y: x**y 表示什么运算？</div><div class="ops">
+<div class="op">A. x 乘以 y</div><div class="op a">B. x 的 y 次幂  ✅答案</div><div class="op">C. x 整除 y</div><div class="op">D. x 与 y 的和</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>20.</b> 以写入模式打开文件时，若文件已存在会怎样？</div><div class="ops">
+<div class="op">A. 报错</div><div class="op">B. 在原内容后追加</div><div class="op a">C. 清空原内容  ✅答案</div><div class="op">D. 自动重命名原文件</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>21.</b> 在类中，哪个方法用来初始化对象的属性？</div><div class="ops">
+<div class="op">A. __str__</div><div class="op a">B. __init__  ✅答案</div><div class="op">C. __del__</div><div class="op">D. __class__</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>22.</b> try-except 结构中，else 代码块在什么情况下执行？</div><div class="ops">
+<div class="op">A. 发生异常时</div><div class="op a">B. 未发生异常时  ✅答案</div><div class="op">C. 无论是否发生异常都执行</div><div class="op">D. 程序退出时</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>23.</b> 已知 t = ([1, 2], 3)，执行 t[0].append(3) 后，t 的值是？</div><div class="ops">
+<div class="op">A. ([1, 2], 3)</div><div class="op a">B. ([1, 2, 3], 3)  ✅答案</div><div class="op">C. 报错</div><div class="op">D. ([1, 2], [3, 3])</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>24.</b> 异常处理结构中，无论是否发生异常都会执行的代码块是？</div><div class="ops">
+<div class="op">A. try</div><div class="op">B. except</div><div class="op a">C. finally  ✅答案</div><div class="op">D. else</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>25.</b> 下列代码的输出是？<br>name = "张三"; age = 20;<br>print("我叫%s，今年%d岁" % (name, age))</div><div class="ops">
+<div class="op a">A. 我叫张三，今年20岁  ✅答案</div><div class="op">B. 我叫%s，今年%d岁</div><div class="op">C. 报错</div><div class="op">D. 我叫name，今年age岁</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>26.</b> 已知 t = (1, 2, [3, 4])，下列哪项操作是合法的？</div><div class="ops">
+<div class="op">A. t[0] = 10</div><div class="op a">B. t[2].append(5)  ✅答案</div><div class="op">C. t[2] = [7, 8]</div><div class="op">D. del t[1]</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>27.</b> 关于函数返回值，以下说法正确的是？</div><div class="ops">
+<div class="op">A. 函数必须要有返回值</div><div class="op">B. 函数只能返回一个值</div><div class="op a">C. 函数可以返回多个值，以元组形式  ✅答案</div><div class="op">D. return语句后函数继续执行</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>28.</b> f"圆周率约等于{3.14159:.2f}" 的结果是？</div><div class="ops">
+<div class="op a">A. 圆周率约等于3.14  ✅答案</div><div class="op">B. 圆周率约等于3.14159</div><div class="op">C. 圆周率约等于3</div><div class="op">D. 报错</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>29.</b> 以下哪个方法可以移除字符串左右两边的空白字符？</div><div class="ops">
+<div class="op">A. str.split()</div><div class="op a">B. str.strip()  ✅答案</div><div class="op">C. str.replace()</div><div class="op">D. str.trim()</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>30.</b> 运行以下代码后输出是？<div class="code">def f(a, L=[]):
+    L.append(a)
+    return L
+print(f(1))
+print(f(2))</div></div><div class="ops">
+<div class="op">A. [1] 然后 [2]</div><div class="op a">B. [1] 然后 [1, 2]  ✅答案</div><div class="op">C. [1] 然后 [1]</div><div class="op">D. 报错</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>31.</b> 下列哪个表达式的值与其他三项不同？</div><div class="ops">
+<div class="op">A. 3 ** 2</div><div class="op">B. pow(3, 2)</div><div class="op a">C. 3 * 2  ✅答案</div><div class="op">D. 9</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>32.</b> 执行 bool([]) 的结果是？</div><div class="ops">
+<div class="op">A. True</div><div class="op a">B. False  ✅答案</div><div class="op">C. None</div><div class="op">D. 报错</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>33.</b> 以下关于 return 语句的说法，正确的是？</div><div class="ops">
+<div class="op">A. 一个函数中只能有一个 return 语句</div><div class="op">B. return 语句后面必须跟一个值</div><div class="op a">C. 函数执行到 return 语句后立即结束  ✅答案</div><div class="op">D. 没有 return 语句的函数没有返回值</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>34.</b> 执行 set([1, 2, 2, 3, 3, 3]) 的结果是？</div><div class="ops">
+<div class="op a">A. {1, 2, 3}  ✅答案</div><div class="op">B. [1, 2, 3]</div><div class="op">C. (1, 2, 3)</div><div class="op">D. {1:2, 3:3}</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>35.</b> 以下哪个选项可以正确删除字典 d 中的键 'key'？</div><div class="ops">
+<div class="op">A. d.remove('key')</div><div class="op">B. d.delete('key')</div><div class="op a">C. del d['key']  ✅答案</div><div class="op">D. d.popitem('key')</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>36.</b> 执行 list(range(5, 0, -1)) 的结果是？</div><div class="ops">
+<div class="op a">A. [5, 4, 3, 2, 1]  ✅答案</div><div class="op">B. [5, 4, 3, 2, 1, 0]</div><div class="op">C. [1, 2, 3, 4, 5]</div><div class="op">D. [4, 3, 2, 1, 0]</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>37.</b> 关于 is 和 == 的区别，下列说法正确的是？</div><div class="ops">
+<div class="op">A. is 比较值，== 比较内存地址</div><div class="op a">B. is 比较内存地址，== 比较值  ✅答案</div><div class="op">C. 两者完全相同，可以互换使用</div><div class="op">D. is 只能用于数字类型</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>38.</b> 以下代码的输出结果是？<div class="code">def func(a, b=[]):
+    b.append(a)
+    return b
+print(func(1))
+print(func(2, []))
+print(func(3))</div></div><div class="ops">
+<div class="op">A. [1] [2] [3]</div><div class="op a">B. [1] [2] [1, 3]  ✅答案</div><div class="op">C. [1] [2] [1, 3]</div><div class="op">D. [1] [2] [1, 2, 3]</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>39.</b> 以下哪个模块用于处理正则表达式？</div><div class="ops">
+<div class="op">A. math</div><div class="op a">B. re  ✅答案</div><div class="op">C. sys</div><div class="op">D. os</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>40.</b> 执行 (lambda x: x * 2)(3) 的结果是？</div><div class="ops">
+<div class="op">A. 2</div><div class="op">B. 3</div><div class="op a">C. 6  ✅答案</div><div class="op">D. 9</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>41.</b> 以下哪个是Python中正确的复数表示？</div><div class="ops">
+<div class="op">A. 2+3j</div><div class="op">B. 2+3i</div><div class="op">C. 2+3J</div><div class="op a">D. 以上都是  ✅答案</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>42.</b> 执行 bool(0), bool(3.14), bool("") 的结果依次是？</div><div class="ops">
+<div class="op">A. True True False</div><div class="op a">B. False True False  ✅答案</div><div class="op">C. False False True</div><div class="op">D. True False True</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>43.</b> 关于文件操作，以下说法错误的是？</div><div class="ops">
+<div class="op">A. open()打开后需close()关闭</div><div class="op">B. with语句可自动关闭</div><div class="op">C. 'r'模式打开不存在文件会报错</div><div class="op a">D. 'w'模式打开不存在文件会报错  ✅答案</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>44.</b> 以下代码的输出结果是？<div class="code">a = [1, 2, 3]
+b = a
+a.append(4)
+print(b)</div></div><div class="ops">
+<div class="op">A. [1, 2, 3]</div><div class="op a">B. [1, 2, 3, 4]  ✅答案</div><div class="op">C. [4]</div><div class="op">D. None</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>45.</b> 以下哪个关键字用于在异常处理中捕获特定类型的异常？</div><div class="ops">
+<div class="op">A. catch</div><div class="op">B. throw</div><div class="op a">C. except  ✅答案</div><div class="op">D. finally</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>46.</b> 执行 print(0.1 + 0.2 == 0.3) 的结果是？</div><div class="ops">
+<div class="op">A. True</div><div class="op a">B. False  ✅答案</div><div class="op">C. 0.3</div><div class="op">D. 报错</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>47.</b> 以下关于 global 关键字的说法，正确的是？</div><div class="ops">
+<div class="op">A. 函数内可直接修改全局变量</div><div class="op">B. global声明后可以创建新全局变量</div><div class="op a">C. global用于声明要修改的全局变量  ✅答案</div><div class="op">D. global只能在模块最外层使用</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>48.</b> 以下代码的输出结果是？<div class="code">a = 10
+def foo():
+    a = 20
+    print(a)
+foo()
+print(a)</div></div><div class="ops">
+<div class="op">A. 10 10</div><div class="op">B. 20 20</div><div class="op a">C. 20 10  ✅答案</div><div class="op">D. 10 20</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>49.</b> 以下哪个方法可以将列表中的所有元素连接成一个字符串？</div><div class="ops">
+<div class="op">A. list.join()</div><div class="op a">B. str.join()  ✅答案</div><div class="op">C. str.cat()</div><div class="op">D. list.concat()</div></div></div>
+
+<div class="q-card"><div class="q-t"><b>50.</b> 以下关于 pass 语句的说法，正确的是？</div><div class="ops">
+<div class="op">A. pass会中断程序执行</div><div class="op">B. pass用于函数必须有返回值时占位</div><div class="op a">C. pass是空操作，保持语法完整性  ✅答案</div><div class="op">D. pass只能用在循环语句中</div></div></div>
+
+<h2 id="a">二、简答题</h2>
+
+<div class="qa"><div class="qt"><b>1.</b> Python是动态类型语言，请解释什么是动态类型，并与静态类型语言进行对比。在Python中，同一个变量名可以在程序运行期间被赋值为不同类型的数据，请举例说明这一特性，并简述这种特性的优点和潜在的注意事项。</div>
+<div class="aa"><b>答案：</b>动态类型：变量类型在<strong>运行时</strong>确定，无需声明，同一变量可赋不同类型。如：<code>x=10; x="hello"; x=[1,2,3]</code>。静态类型（C/Java）在编译时确定类型，变量必须先声明。优点：灵活简洁，开发效率高。注意事项：类型错误运行时才发现；建议用Type Hints辅助；注意变量命名规范。</div></div>
+
+<div class="qa"><div class="qt"><b>2.</b> 请分别说明 if-elif-else 选择结构的执行逻辑，以及 for 循环和 while 循环的适用场景有何不同。在此基础上，解释什么是死循环，并说明如何避免死循环的发生。</div>
+<div class="aa"><b>答案：</b>if-elif-else：从上到下依次检查，遇到第一个True即执行对应代码块并跳出剩余分支。for循环：适用于<strong>已知循环次数</strong>或<strong>遍历可迭代对象</strong>。while循环：适用于<strong>不确定循环次数</strong>、依赖条件控制的场景。死循环：循环条件永远为True。避免方法：确保条件最终变False、在循环体内修改条件变量、使用break、设置最大迭代次数。</div></div>
+
+<div class="qa"><div class="qt"><b>3.</b> 请说明在Python中进行文件操作的基本步骤，以及以 'r'、'w'、'a' 三种模式打开文件的区别。同时，解释异常处理机制中 try、except、finally 三个关键字各自的作用，并简述为什么要对文件操作进行异常处理。</div>
+<div class="aa"><b>答案：</b>步骤：open()→读/写→close()，推荐用<code>with open() as f:</code>自动关闭。'r'只读（文件须存在）；'w'写入（清空原内容/创建新文件）；'a'追加（保留原内容/创建新文件）。try：放可能出错的代码；except：捕获并处理异常；finally：无论是否异常都执行（释放资源）。文件操作可能遇到文件不存在、无权限、磁盘满等异常，必须处理以保证程序不崩溃且文件正确关闭。</div></div>
+
+<div class="qa"><div class="qt"><b>4.</b> Python中常见的字符串格式化方式有哪三种(%-格式化、str.format()、f-string)？请分别说明它们的基本语法，并从可读性、灵活性和版本兼容性三个方面比较三者的优劣。</div>
+<div class="aa"><b>答案：</b>%-格式化：<code>"我叫%s，%d岁"%(name,age)</code>，Python2风格。format()：<code>"我叫{}，{}岁".format(name,age)</code>，支持索引和关键字。f-string：<code>f"我叫{name}，{age}岁"</code>，Python3.6+。可读性：f-string > format > %。灵活性：format最灵活（支持复杂格式化）。兼容性：%最广（支持Python2），f-string仅3.6+。推荐用f-string。</div></div>
+
+<div class="qa"><div class="qt"><b>5.</b> 请解释面向对象编程中"封装"和"继承"两个核心概念的含义和目的。结合实例说明：封装如何提升代码的安全性？继承如何提高代码的复用性？并简述子类重写父类方法的意义。</div>
+<div class="aa"><b>答案：</b>封装：将数据和操作数据的方法绑定在一起，隐藏内部实现。通过私有属性(__xxx)和公开getter/setter控制外部访问，可加入数据验证 → 安全性。继承：子类继承父类的属性和方法，公共代码写在父类 → 复用性。重写：子类重新定义父类方法，实现<strong>多态</strong>——同一接口不同行为。如Animal父类有make_sound()，Cat重写为"喵喵"，Dog重写为"汪汪"。</div></div>
+
+<div class="qa"><div class="qt"><b>6.</b> 请解释Python中切片操作的三个参数(start、stop、step)的含义，并分别举例说明：如何利用切片实现字符串的反转、如何取出字符串的偶数位字符。另外，说明字符串的 split() 和 join() 方法分别有什么作用，并举例。</div>
+<div class="aa"><b>答案：</b>切片：[start:stop:step]。start起始索引(含)，stop结束索引(不含)，step步长(负数为反向)。反转：<code>"hello"[::-1] → 'olleh'</code>（从右向左取）。偶数位：<code>"abcdef"[::2] → 'ace'</code>（隔一个取一个）。split()：按分隔符拆分字符串为列表。如<code>"a,b".split(",")→['a','b']</code>。join()：用分隔符连接列表为字符串。如<code>"-".join(['a','b'])→'a-b'</code>。</div></div>
+
+<h2 id="f">三、程序填空题</h2>
+
+<div class="qa">
+<div class="qt"><b>1.</b> 以下程序输入一个字符串，分别统计并输出其中大写字母、小写字母、数字、空格和其他字符的个数。</div>
+<div class="code">s = input("请输入一个字符串：")
+upper_count = 0; lower_count = 0
+digit_count = 0; space_count = 0; other_count = 0
+for ch in s:
+    if <span class="fa">① ch.isupper()</span>:              # 判断是否为大写字母
+        upper_count += 1
+    elif <span class="fa">② ch.islower()</span>:            # 判断是否为小写字母
+        lower_count += 1
+    elif ch.isdigit():
+        <span class="fa">③ digit_count</span> += 1         # 数字计数加1
+    elif ch == ' ':
+        space_count += 1
+    else:
+        <span class="fa">④ other_count</span> += 1        # 其他字符计数加1
+print(f"大写：{upper_count}，小写：{lower_count}，数字：{digit_count}，空格：{space_count}，其他：{<span class="fa">⑤ other_count</span>}")</div>
+</div>
+
+<div class="qa">
+<div class="qt"><b>2.</b> 以下程序找出1到100之间所有能被3整除但不能被5整除的数，统计个数并输出。</div>
+<div class="code">count = 0
+result = []
+for i in range(1, <span class="fa">① 101</span>):              # 循环范围1到100
+    if i % 3 == 0 <span class="fa">② and</span> i % 5 != 0:    # 两个条件的连接
+        result.append(i)
+        count = <span class="fa">③ count + 1</span>            # 计数器加1
+print(f"符合条件的数有：{<span class="fa">④ result</span>}")    # 输出结果列表
+print(f"共有{<span class="fa">⑤ count</span>}个")              # 输出个数</div>
+</div>
+
+<div class="qa">
+<div class="qt"><b>3.</b> 以下程序统计一段文本中每个单词出现的次数，并输出出现次数最多的单词及其次数。</div>
+<div class="code">text = "apple banana apple orange banana apple orange apple grape"
+words = text.<span class="fa">① split()</span>             # 按空格分割为单词列表
+word_count = {}
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = <span class="fa">② 1</span>      # 首次出现，计数为1
+max_word = None; max_count = 0
+for word, count in word_count.<span class="fa">③ items()</span>:  # 遍历字典的键值对
+    if count > max_count:
+        max_count = count
+        <span class="fa">④ max_word</span> = word        # 更新出现最多的单词
+print(f"出现最多的单词是'{max_word}'，出现了{<span class="fa">⑤ max_count</span>}次")</div>
+</div>
+
+<div class="qa">
+<div class="qt"><b>4.</b> 以下程序定义一个函数，接收一个列表作为参数，返回第二大的元素（去重）。若长度不足2返回None。</div>
+<div class="code">def second_largest(lst):
+    if <span class="fa">① len(lst)</span> &lt; 2:             # 判断列表长度
+        return None
+    unique_lst = list(<span class="fa">② set(lst)</span>)    # 将列表转为集合去重
+    unique_lst.sort(<span class="fa">③ reverse=True</span>)    # 降序排序
+    return <span class="fa">④ unique_lst[1]</span>            # 返回第二大元素
+
+numbers = [5, 8, 2, 8, 6, 3]
+result = <span class="fa">⑤ second_largest(numbers)</span>    # 调用函数
+print(f"第二大元素是：{result}")</div>
+</div>
+
+<div class="qa">
+<div class="qt"><b>5.</b> 以下程序从文件 scores.txt 中读取数据，计算所有学生的平均成绩，并写入 report.txt。</div>
+<div class="code">total = 0; count = 0; lines_list = []
+with open('scores.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        line = line.<span class="fa">① strip()</span>        # 去除行末换行符和空白
+        name, score_str = line.split(',')
+        score = <span class="fa">② float(score_str)</span>      # 将成绩转为浮点数
+        total += score
+        count += 1
+        lines_list.append(<span class="fa">③ f"姓名：{name}，成绩：{score}"</span>)
+
+average = <span class="fa">④ total / count</span>          # 计算平均值
+with open('report.txt', 'w', encoding='utf-8') as f:
+    for formatted_line in lines_list:
+        f.write(formatted_line + '\n')
+    f.write(<span class="fa">⑤ f"平均成绩：{average:.2f}"</span>)  # 写入平均成绩</div>
+</div>
+
+<div class="qa">
+<div class="qt"><b>6.</b> 以下程序定义父类 Animal 和两个子类 Cat 和 Duck，体现多态特性。</div>
+<div class="code">class Animal:
+    def __init__(self, name):
+        self.name = name
+    def make_sound(self):
+        pass
+
+class Cat(Animal):
+    def make_sound(self):
+        return f"{self.name}说：<span class="fa">① 喵喵</span>"    # 猫的叫声
+
+class Duck(<span class="fa">② Animal</span>):                      # 继承父类
+    def make_sound(self):
+        return f"{self.name}说：嘎嘎"
+
+def animal_sound(animal):
+    print(<span class="fa">③ animal.make_sound()</span>)          # 调用声音方法
+
+c = Cat(<span class="fa">④ "猫咪"</span>)                          # 参数为猫咪名字
+d = Duck("唐老鸭")
+animal_sound(c)
+animal_sound(<span class="fa">⑤ d</span>)                           # 传入鸭子对象</div>
+</div>
+
+</body>
+</html>
